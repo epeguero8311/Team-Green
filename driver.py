@@ -1,6 +1,4 @@
 def main():
-
-    
     # First 6 tasks to be completed:
     # SWE will be completing (2, 4, 6)  and the tester will be completing (1, 3, 5) 
     # 1. Write code that stores the first N records of the dataset in some custom object.
