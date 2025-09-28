@@ -27,12 +27,14 @@ class InsuranceRecord {
     public String region;
     public boolean smoker;
 
-    public InsuranceRecord(int age, double bmi, int children, double charges, String region, boolean smoker) {
+    public InsuranceRecord(int age, double bmi, int children, double charges, String region, boolean smoker, String sex) {
         this.age = age;
         this.bmi = bmi;
         this.children = children;
         this.charges = charges;
         this.region = region;
         this.smoker = smoker;
+        this.sex = sex;
     }
 }
+//git
