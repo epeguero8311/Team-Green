@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class driver {
     public static void main(String[] args) {
         //  First 6 tasks to be completed:
@@ -24,6 +26,8 @@ public class driver {
         //     # with the number of smokers and non-smokers as arguments.
    
 
+        System.out.println("Calculations:");
+        Calculations.readCSV("insurance.csv");
 
 
     }
