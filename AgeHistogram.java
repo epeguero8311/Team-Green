@@ -40,4 +40,5 @@ public class AgeHistogram {
         //     }
         //     System.out.println();
         // }
+ }
 }
