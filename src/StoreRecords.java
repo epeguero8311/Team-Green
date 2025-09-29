@@ -1,4 +1,7 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.*;
+java.io.*;
 public class StoreRecords {
     public ArrayList<InsuranceRecord> records;
 
@@ -17,7 +20,42 @@ public class StoreRecords {
         }
         return first_n_records;
     }
+
+    public void read_csv(String filename){
+        try{
+            File file = new File(filename);
+            Scanner scanner = new Scanner(file);
+
+            if(scanner.hasNextLine()){
+                while(scanner.hasNextLine()){
+                    String[] parts = scanner.nextLine().split(",");
+
+                    int age = Integer.parseInt(parts[0].trim());
+                    String sex = parts[1].trim();
+                    double bmi = Double.parseDouble(parts[2].trim());
+                    int children = Integer.parseInt(parts[3].trim());
+                    boolean smoker = parts[4].trim().equals("yes");
+                    String region = parts[5].trim();
+                    double charges = Double.parseDouble(parts[6].trim());
+
+                    InsuranceRecord record = new InsuranceRecord(age, bmi, children, charges, region, smoker);
+                       records.add(record);
+                } // Skip header line
+            }
+
+            scanner.close();
+        }catch(FileNotFoundException e){
+            System.out.println("File not found: " + filename());
+        }
+    }
+
+    public ArrayList<InsuranceRecord> getRecords() {
+        return records;
+    }
 }
+
+
+
 
 class InsuranceRecord {
     public int age;
@@ -27,14 +65,14 @@ class InsuranceRecord {
     public String region;
     public boolean smoker;
 
-    public InsuranceRecord(int age, double bmi, int children, double charges, String region, boolean smoker, String sex) {
+    public InsuranceRecord(int age, String sex, double bmi, int children, double charges, String region, boolean smoker) {
         this.age = age;
+        this.sex = sex;
         this.bmi = bmi;
         this.children = children;
         this.charges = charges;
         this.region = region;
         this.smoker = smoker;
-        this.sex = sex;
     }
 }
-//git
+
