@@ -1,7 +1,13 @@
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.*;
-java.io.*;
+import java.io.*;
+/* 
+ how to use this with your calculations.java file -> create object and load data from csv
+    StoreRecords store = new StoreRecords();    
+    store.read_csv("insurance.csv");  
+*/
+ 
+
+
 public class StoreRecords {
     public ArrayList<InsuranceRecord> records;
 
@@ -27,6 +33,7 @@ public class StoreRecords {
             Scanner scanner = new Scanner(file);
 
             if(scanner.hasNextLine()){
+                scanner.nextLine(); // Skip header line
                 while(scanner.hasNextLine()){
                     String[] parts = scanner.nextLine().split(",");
 
@@ -34,18 +41,18 @@ public class StoreRecords {
                     String sex = parts[1].trim();
                     double bmi = Double.parseDouble(parts[2].trim());
                     int children = Integer.parseInt(parts[3].trim());
-                    boolean smoker = parts[4].trim().equals("yes");
+                    boolean smoker = parts[4].trim().equalsIgnoreCase("yes");
                     String region = parts[5].trim();
                     double charges = Double.parseDouble(parts[6].trim());
 
-                    InsuranceRecord record = new InsuranceRecord(age, bmi, children, charges, region, smoker);
+                    InsuranceRecord record = new InsuranceRecord(age, sex, bmi, children, charges, region, smoker);
                        records.add(record);
                 } // Skip header line
             }
 
             scanner.close();
         }catch(FileNotFoundException e){
-            System.out.println("File not found: " + filename());
+            System.out.println("File not found: " + filename);
         }
     }
 
@@ -59,6 +66,7 @@ public class StoreRecords {
 
 class InsuranceRecord {
     public int age;
+    public String sex; 
     public double bmi;
     public int children;
     public double charges;
