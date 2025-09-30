@@ -24,10 +24,6 @@ public class driver {
         //  6. Write code that displays a vertical text-based histogram showing the number of smokers and the number of non-smokers.
         //     # I think this will just be a function call in the driver that calls a function in the graphing file 
         //     # with the number of smokers and non-smokers as arguments.
-   
-
-        System.out.println("Calculations:");
-        Calculations.readCSV("insurance.csv");
 
 
     }

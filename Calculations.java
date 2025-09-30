@@ -1,90 +1,149 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Scanner;
+import java.util.*;
 
 public class Calculations {
-
-    public static void main(String[] args) {
-        readCSV("insurance.csv");
+    
+    public static int count(ArrayList<InsuranceRecord> records) {
+        return records.size();
     }
-
-    public static void readCSV(String filename) {
-        ArrayList<Double> ages = new ArrayList<>();
-        ArrayList<Double> bmis = new ArrayList<>();
-        ArrayList<Double> children = new ArrayList<>();
-        ArrayList<Double> charges = new ArrayList<>();
-
-        try {
-            File file = new File(filename);
-            Scanner sc = new Scanner(file);
-
-            // Skip header
-            if (sc.hasNextLine()) sc.nextLine();
-
-            while (sc.hasNextLine()) {
-                String[] parts = sc.nextLine().split(",");
-                ages.add(Double.parseDouble(parts[0].trim()));
-                bmis.add(Double.parseDouble(parts[2].trim()));
-                children.add(Double.parseDouble(parts[3].trim()));
-                charges.add(Double.parseDouble(parts[6].trim()));
+    
+    public static double mean(ArrayList<Double> values) {
+        if (values.isEmpty()) return 0.0;
+        double sum = 0.0;
+        for (double value : values) {
+            sum += value;
+        }
+        return sum / values.size();
+    }
+    
+    public static double standardDeviation(ArrayList<Double> values) {
+        if (values.size() < 2) return 0.0;
+        double mean = mean(values);
+        double sumSquaredDiff = 0.0;
+        for (double value : values) {
+            sumSquaredDiff += Math.pow(value - mean, 2);
+        }
+        return Math.sqrt(sumSquaredDiff / (values.size() - 1));
+    }
+    
+    public static double min(ArrayList<Double> values) {
+        if (values.isEmpty()) return 0.0;
+        double minimum = values.get(0);
+        for (double value : values) {
+            if (value < minimum) {
+                minimum = value;
             }
-
-            sc.close();
-
-            printStats("Age", ages);
-            printStats("BMI", bmis);
-            printStats("Children", children);
-            printStats("Charges", charges);
-
-        } catch (FileNotFoundException e) {
-            System.out.println("File not found: " + filename);
-            e.printStackTrace();
         }
+        return minimum;
     }
-
-    public static void printStats(String name, ArrayList<Double> data) {
-        Collections.sort(data); 
-
-        int count = data.size();
-        double mean = calculateMean(data);
-        double std = calculateStd(data, mean);
-        double min = data.get(0);
-        double max = data.get(data.size() - 1);
-        double p25 = calculatePercentile(data, 25);
-        double p50 = calculatePercentile(data, 50);
-        double p75 = calculatePercentile(data, 75);
-
-        System.out.println("---- " + name + " ----");
-        System.out.println("Count: " + count);
-        System.out.println("Mean: " + mean);
-        System.out.println("Std: " + std);
-        System.out.println("Min: " + min);
-        System.out.println("25%: " + p25);
-        System.out.println("50%: " + p50);
-        System.out.println("75%: " + p75);
-        System.out.println("Max: " + max);
-        System.out.println();
-    }
-
-    public static double calculateMean(ArrayList<Double> data) {
-        double sum = 0;
-        for (double num : data) sum += num;
-        return sum / data.size();
-    }
-
-    public static double calculateStd(ArrayList<Double> data, double mean) {
-        double sum = 0;
-        for (double num : data) {
-            double diff = num - mean;
-            sum += diff * diff;
+    
+    public static double max(ArrayList<Double> values) {
+        if (values.isEmpty()) return 0.0;
+        double maximum = values.get(0);
+        for (double value : values) {
+            if (value > maximum) {
+                maximum = value;
+            }
         }
-        return Math.sqrt(sum / data.size());
+        return maximum;
     }
-
-    public static double calculatePercentile(ArrayList<Double> sorted, double percentile) {
-        int index = (int) Math.ceil(percentile / 100.0 * sorted.size()) - 1;
-        return sorted.get(index);
+    
+    public static double percentile(ArrayList<Double> values, double percentile) {
+        if (values.isEmpty()) return 0.0;
+        ArrayList<Double> sorted = new ArrayList<>(values);
+        Collections.sort(sorted);
+        
+        double index = (percentile / 100.0) * (sorted.size() - 1);
+        int lowerIndex = (int) Math.floor(index);
+        int upperIndex = (int) Math.ceil(index);
+        
+        if (lowerIndex == upperIndex) {
+            return sorted.get(lowerIndex);
+        }
+        
+        double lowerValue = sorted.get(lowerIndex);
+        double upperValue = sorted.get(upperIndex);
+        double fraction = index - lowerIndex;
+        
+        return lowerValue + (upperValue - lowerValue) * fraction;
+    }
+    
+    public static ArrayList<Double> extractAges(ArrayList<InsuranceRecord> records) {
+        ArrayList<Double> ages = new ArrayList<>();
+        for (InsuranceRecord record : records) {
+            ages.add((double) record.age);
+        }
+        return ages;
+    }
+    
+    public static ArrayList<Double> extractBMI(ArrayList<InsuranceRecord> records) {
+        ArrayList<Double> bmis = new ArrayList<>();
+        for (InsuranceRecord record : records) {
+            bmis.add(record.bmi);
+        }
+        return bmis;
+    }
+    
+    public static ArrayList<Double> extractChildren(ArrayList<InsuranceRecord> records) {
+        ArrayList<Double> children = new ArrayList<>();
+        for (InsuranceRecord record : records) {
+            children.add((double) record.children);
+        }
+        return children;
+    }
+    
+    public static ArrayList<Double> extractCharges(ArrayList<InsuranceRecord> records) {
+        ArrayList<Double> charges = new ArrayList<>();
+        for (InsuranceRecord record : records) {
+            charges.add(record.charges);
+        }
+        return charges;
+    }
+    
+    public static Map<String, Double> getStatistics(ArrayList<Double> values) {
+        Map<String, Double> stats = new LinkedHashMap<>();
+        stats.put("count", (double) values.size());
+        stats.put("mean", mean(values));
+        stats.put("std", standardDeviation(values));
+        stats.put("min", min(values));
+        stats.put("25%", percentile(values, 25));
+        stats.put("50%", percentile(values, 50));
+        stats.put("75%", percentile(values, 75));
+        stats.put("max", max(values));
+        return stats;
+    }
+    
+    public static void printStatistics(String attribute, Map<String, Double> stats) {
+        System.out.println("\nStatistics for " + attribute + ":");
+        System.out.printf("Count: %.0f\n", stats.get("count"));
+        System.out.printf("Mean: %.2f\n", stats.get("mean"));
+        System.out.printf("Std: %.2f\n", stats.get("std"));
+        System.out.printf("Min: %.2f\n", stats.get("min"));
+        System.out.printf("25%%: %.2f\n", stats.get("25%"));
+        System.out.printf("50%%: %.2f\n", stats.get("50%"));
+        System.out.printf("75%%: %.2f\n", stats.get("75%"));
+        System.out.printf("Max: %.2f\n", stats.get("max"));
+    }
+    
+    public static void calculateAllStatistics(StoreRecords store) {
+        ArrayList<InsuranceRecord> records = store.getRecords();
+        
+        Map<String, Double> ageStats = getStatistics(extractAges(records));
+        printStatistics("Age", ageStats);
+        
+        Map<String, Double> bmiStats = getStatistics(extractBMI(records));
+        printStatistics("BMI", bmiStats);
+        
+        Map<String, Double> childrenStats = getStatistics(extractChildren(records));
+        printStatistics("Children", childrenStats);
+        
+        Map<String, Double> chargesStats = getStatistics(extractCharges(records));
+        printStatistics("Charges", chargesStats);
+    }
+    
+    public static void main(String[] args) {
+        StoreRecords store = new StoreRecords();
+        store.read_csv("insurance.csv");
+        
+        calculateAllStatistics(store);
     }
 }
