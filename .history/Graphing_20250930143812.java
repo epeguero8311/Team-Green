@@ -95,63 +95,10 @@ public class Graphing {
         verticalHistogram(nonSmokerBMI, "BMI Distribution - Non-Smokers", 10);
     }
     
-    public static int[] countSmokers(ArrayList<InsuranceRecord> records) {
-        int smokerCount = 0;
-        int nonSmokerCount = 0;
-        
-        for (InsuranceRecord record : records) {
-            if (record.smoker) {
-                smokerCount++;
-            } else {
-                nonSmokerCount++;
-            }
-        }
-        
-        return new int[]{nonSmokerCount, smokerCount};
-    }
-    
-    public static void displaySmokerHistogram(int nonSmokerCount, int smokerCount) {
-        System.out.println("\n=== Smoker vs Non-Smoker Distribution ===");
-        System.out.println("Total Records: " + (smokerCount + nonSmokerCount));
-        System.out.println();
-        
-        int maxCount = Math.max(smokerCount, nonSmokerCount);
-        int height = Math.min(maxCount, 30);
-        double scale = (double) maxCount / height;
-        
-        for (int level = height; level > 0; level--) {
-            int threshold = (int) (level * scale);
-            System.out.printf("%5d | ", threshold);
-            
-            if (nonSmokerCount >= threshold) {
-                System.out.print("  ######  ");
-            } else {
-                System.out.print("          ");
-            }
-            
-            System.out.print("    ");
-            
-            if (smokerCount >= threshold) {
-                System.out.print("  ######  ");
-            } else {
-                System.out.print("          ");
-            }
-            
-            System.out.println();
-        }
-        
-        System.out.println("      +---------------------------");
-        System.out.println("       Non-Smokers    Smokers");
-        System.out.printf("         %-6d        %-6d\n", nonSmokerCount, smokerCount);
-    }
-    
     public static void main(String[] args) {
         StoreRecords store = new StoreRecords();
         store.read_csv("insurance.csv");
         
         displayBMIHistograms(store);
-        
-        int[] counts = countSmokers(store.getRecords());
-        displaySmokerHistogram(counts[0], counts[1]);
     }
 }
