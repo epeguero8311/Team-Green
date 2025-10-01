@@ -144,14 +144,4 @@ public class Graphing {
         System.out.println("       Non-Smokers    Smokers");
         System.out.printf("         %-6d        %-6d\n", nonSmokerCount, smokerCount);
     }
-    
-    public static void main(String[] args) {
-        StoreRecords store = new StoreRecords();
-        store.read_csv("insurance.csv");
-        
-        displayBMIHistograms(store);
-        
-        int[] counts = countSmokers(store.getRecords());
-        displaySmokerHistogram(counts[0], counts[1]);
-    }
 }

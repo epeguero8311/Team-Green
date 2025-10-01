@@ -139,11 +139,4 @@ public class Calculations {
         Map<String, Double> chargesStats = getStatistics(extractCharges(records));
         printStatistics("Charges", chargesStats);
     }
-    
-    public static void main(String[] args) {
-        StoreRecords store = new StoreRecords();
-        store.read_csv("insurance.csv");
-        
-        calculateAllStatistics(store);
-    }
 }
