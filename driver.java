@@ -2,28 +2,18 @@ import java.util.Scanner;
 
 public class driver {
     public static void main(String[] args) {
-        //  First 6 tasks to be completed:
-        //  SWE will be completing (2, 4, 6)  and the tester will be completing (1, 3, 5) 
-        //  1. Write code that stores the first N records of the dataset in some custom object.
-        //     # Create a file that has one class that represents the record
-        //     # In the driver, read the data from insurance.cvs file and store it in a list of objects
-
-        //  2. Write code that calculates the count, mean, std, min, percentiles (25%, 50%, 75%) 
-        //     and max of the age, bmi, children, and charges attributes.
-        //     # Create another file that has all the functions that handle these calculations
-
-        //  3. Write code that displays a horizontal text-based histogram of the ages. Remember, you can't use any plotting libraries.
-        //  4. Write code that displays a vertical text-based histogram of the bmi. Remember, you can't use any plotting libraries.
-        //     # I think #3 and #4 should all be in one graphing file
-
         //  5. Write code that determines the total number of records for each number of children.
         //     # This should be in the calculations file 
         //     # maybe a total function that returns a dictionary with the number of children as the key 
         //     # and the total number of records as the value
 
-        //  6. Write code that displays a vertical text-based histogram showing the number of smokers and the number of non-smokers.
-        //     # I think this will just be a function call in the driver that calls a function in the graphing file 
-        //     # with the number of smokers and non-smokers as arguments.
+        // 7. We think this data is "fair" if the number of records from each region differ by no more than 5%.  Is the data fair?
+        // 8. Is it true that people 50 or older average twice the charges as the average of people 20 and younger?
+        // 9. We think the range of charges for bmi in 30-45 are greater than the other two ranges of BMIs.  Is this true?
+        // 10. We think that having more children is a lower charge per child.  Is this true?
+        // 11. Our hypothesis is that smokers have higher charges and a wider range of charges than non-smokers.  Is this hypothesis true for our dataset?
+        // 12. We think smokers in the south are charged at least 25% more than other smokers.  Is this correct?
+        // 13. Do smokers average lower bmi than non-smokers?
 
 
     }
