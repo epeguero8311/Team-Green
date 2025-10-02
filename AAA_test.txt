@@ -4,13 +4,15 @@ Arrange: Setup code to test
 Act: Perform action you want to test
 Assert: Check if results match expectations
 
-Test 2
-Arrange: 
-Act: 
-Assert: 
----------
-Feature: 
+-chloe
+Feature:Calculate stats for age
 Test 1
-Arrange: 
-Act: 
-Assert: 
+Arrange: I created a dataset of ages
+Act: Calculate.getStatistics() method is used to calculate for needed outcomes
+Assert: Checking to make sure the stats match expected outcome
+---------
+Feature: Calculate stats for bmi
+Test 2
+Arrange: I created a dataset of bmis
+Act: Calculate.getStatistics() method is used to calculate for needed outcomes
+Assert: Checking to make sure the stats match expected outcome 
