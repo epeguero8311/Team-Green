@@ -1,4 +1,4 @@
-import java.lang.reflect.Array;
+import java.io.*;
 import java.util.*;
 
 public class AgeHistogram {
@@ -14,13 +14,19 @@ public class AgeHistogram {
             age_counts.put(record.age, age_counts.getOrDefault(record.age, 0) + 1);
     }
 
-        for(int age : age_counts.keySet()) {
+        ArrayList<Integer> ages = new ArrayList<>(age_counts.keySet());
+        Collections.sort(ages);
+
+        for (int age : ages) {   // <-- use sorted ages here
             System.out.printf("%2d: ", age);
-            for(int i = 0; i < age_counts.get(age); i++) {
+            for (int i = 0; i < age_counts.get(age); i++) {
                 System.out.print("*");
             }
             System.out.println();
         }
+
+    }
+}
 
     //int[] age_groups = new int[10]; // 0-9, 10-19, ..., 90-99
 
@@ -40,5 +46,3 @@ public class AgeHistogram {
         //     }
         //     System.out.println();
         // }
- }
-}
