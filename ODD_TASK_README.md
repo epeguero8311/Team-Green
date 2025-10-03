@@ -27,3 +27,6 @@ Implemented `Task9` class that splits BMI into three groups (<30, 30–45, >45),
 
 ### Task 11 - Our hypothesis is that smokers have higher charges and a wider range of charges than non-smokers. Is this hypothesis true for our dataset?
 Split records into smokers vs nonsmokers -> Calculated average charge and found range for each group -> Compared the results
+
+### Task 13 - Do smokers average lower BMI than non-smokers?
+Split records into smokers vs nonsmokers -> Calculated average for bmi -> Compared the results

@@ -33,9 +33,5 @@ public class Task11{
         } else {
             System.out.println("The hypothesis is not supported.");
         }
-
-
     }
-
-
 }
