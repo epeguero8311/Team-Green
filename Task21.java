@@ -37,6 +37,38 @@ public class Task21 {
         double r = pearson(children, charges);
         System.out.println("Pearson correlation coefficient: " + r);
 
-        
+        System.out.println("\nPredicted charges for new child counts:");
+
+        for(int x = 1; x <= 22; x++){
+            double predictedCharge = slope * x + intercept;
+            System.out.printf("Children: %d, Predicted Charges: %.2f%n", x, predictedCharge);
+        }
+    }
+
+    public static double mean(ArrayList<Double> values) {
+        double sum = 0;
+        for (double v : values) {
+            sum += v;
+        }
+        return sum / values.size();
+    }
+
+    public static double pearson(ArrayList<Double> x, ArrayList<Double> y) {
+        double meanx = mean(x);
+        double meany = mean(y);
+
+        double numerator = 0.0;
+        double denominatorX = 0.0;
+        double denominatorY = 0.0;
+
+        for (int i = 0; i < x.size(); i++) {
+            double dx = x.get(i) - meanx;
+            double dy = y.get(i) - meany;
+
+            numerator += dx * dy;
+            denominatorX += dx * dx;
+            denominatorY += dy * dy;
+        }
+        return numerator / Math.sqrt(denominatorX * denominatorY);
     }
 }
