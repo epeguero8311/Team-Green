@@ -13,7 +13,7 @@ public class EvenAAA {
         Map<String, Double> chargesStats = Calculations.getStatistics(charges);
 
         System.out.println("Age Test");
-        //check if stats match expected outcome
+        //check if stats match expected outcome 
         System.out.println("Count correct? " + (ageStats.get("count") == 4));
         System.out.println("Mean correct? " + (Math.abs(ageStats.get("mean") - 35.0) < 0.0001));
         System.out.println("Std correct? " + (Math.abs(ageStats.get("std") - 12.9099) < 0.0001));
@@ -32,7 +32,7 @@ public class EvenAAA {
 
         System.out.println("\n---- Charges Test ----");
         System.out.println("50% correct? " + (Math.abs(chargesStats.get("50%") - 2500.0) < 0.0001));
-        
+
 
     }
 
