@@ -52,3 +52,10 @@ Group charges by region -> Compute average charge for each region -> Sort averag
 
 -> Task 15 rc = new Task15(records);
 -> rc.sort_regions_by_avg_charges();
+
+### Task 17 - Southerners smoke more than northerners. At what average age is this true for the dataset?
+
+Define Southern and Northern regions -> Gather smokers for each group and calculate the average -> Compare the the results
+
+-> Task17 ss = new Task17(records);
+-> ss.compare_smoking_by_region();
