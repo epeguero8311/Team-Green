@@ -1,6 +1,4 @@
 import java.util.*;
-import java.io.*;
-
 
 public class ChildrenCount{
     private ArrayList<InsuranceRecord> records;

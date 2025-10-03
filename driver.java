@@ -10,14 +10,10 @@ public class driver {
         Graphing.displaySmokerHistogram(counts[0], counts[1]);
 
         //(SWE 8, 10, 12, 14) , (Tester 7, 9, 11, 13) Questions that need an average, mean function can be reused in Calculations.java
-        
+
         // 7. We think this data is "fair" if the number of records from each region differ by no more than 5%.  Is the data fair?
                 //Count how many records are from each region then find the minimum and maximum counts.  
                 //If the max is no more than 1.05 times the minimum, then the data is fair.
-
-        // 8. Is it true that people 50 or older average twice the charges as the average of people 20 and younger?
-                //Find the average charges for people >= 50 and people <= 20. 
-                //Then multiply avg charges for people <= 20 by 2 and compare to avg charges for people >= 50.
 
         // 9. We think the range of charges for bmi in 30-45 are greater than the other two ranges of BMIs.  Is this true?
                 //Split records into 3 groups. A: BMI < 30, B: 30 <= BMI <= 45, C: BMI > 45.
