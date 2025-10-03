@@ -59,3 +59,9 @@ Define Southern and Northern regions -> Gather smokers for each group and calcul
 
 -> Task17 ss = new Task17(records);
 -> ss.compare_smoking_by_region();
+
+### Task 19 - Southerners average more children than northerners. At what average age is this true for the dataset?
+Split data  into Southern and Northern regions -> Calculate average child per person and average age of those people -> Compare northern and southern region results
+
+-> Task19 sc = new Task19(records);
+-> sc.compare_children_by_region();
