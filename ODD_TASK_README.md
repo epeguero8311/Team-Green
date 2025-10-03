@@ -65,3 +65,9 @@ Split data  into Southern and Northern regions -> Calculate average child per pe
 
 -> Task19 sc = new Task19(records);
 -> sc.compare_children_by_region();
+
+### Task 21 - Calculate the simple linear regression of the charges versus the number of children.  Output the Pearson Correlation Coefficient (r).  Apply your regression formula to 22 charges that are not in the Kaggle dataset and output both the x and y values.
+Linear Regression Formula: y = a + b * x
+b = r * (sy / sx) a = ȳ - b * x̄
+
+Compute Pearson correlation coefficient -> print regression line formula
