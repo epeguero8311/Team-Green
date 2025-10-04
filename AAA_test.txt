@@ -4,7 +4,8 @@ Arrange: Setup code to test
 Act: Perform action you want to test
 Assert: Check if results match expectations
 
--chloe
+***Even AAA Tests***
+
 Task 2
 Feature:Calculate stats for age
 Test 1
@@ -73,17 +74,87 @@ Test 2
 Arrange: Make a dataset with region and BMI data
 Act: Compare average BMI in southern and northern regions
 Assert: The output shows if southerners have higher BMI, with both averages
-test
+
 Task 20
-Feature:
+Feature: Linear Regression of Charges vs BMI
 Test 1
-Arrange: Make a dataset
-Act:
-Assert:
+Arrange: Make a dataset with BMI and charges.
+Act: Calculate correlation and regression between charges and BMI, then predict 11 new BMI values.
+Assert: The output shows the correlation, formula, and all predicted charges.
 -----------
 Task 22
-Feature: Make a dataset
+Feature: Linear Regression of Charges vs Region
+Test 2
+Arrange: Make a dataset with region and charges.
+Act: Convert regions to numbers, find correlation and regression, then predict 33 new points.
+Assert: The output shows the correlation, equation, and all predicted charges clearly.
+
+======================================================================================================
+
+***Odd AAA Tests***
+
+Feature:
+Test 1
+Arrange:
+Act: 
+Assert:
+---------
+Feature:
 Test 2
 Arrange:
-Act:
+Act: 
+Assert:
+
+Feature:
+Test 1
+Arrange:
+Act: 
+Assert:
+---------
+Feature:
+Test 2
+Arrange:
+Act: 
+Assert:
+
+Feature:
+Test 1
+Arrange:
+Act: 
+Assert:
+---------
+Feature:
+Test 2
+Arrange:
+Act: 
+Assert:
+
+Feature:
+Test 1
+Arrange:
+Act: 
+Assert:
+---------
+Feature:
+Test 2
+Arrange:
+Act: 
+Assert:
+
+Feature:
+Test 1
+Arrange:
+Act: 
+Assert:
+---------
+Feature:
+Test 2
+Arrange:
+Act: 
+Assert:
+
+Feature:
+Test 1
+Arrange:
+Act: 
 Assert:
