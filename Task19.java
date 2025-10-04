@@ -5,6 +5,14 @@ public class Task19 {
         this.records = records;
     }
 
+    private ArrayList<Double> convertToDoubleList(ArrayList<Integer> intList) {
+        ArrayList<Double> doubleList = new ArrayList<>();
+        for (Integer i : intList) {
+            doubleList.add(i.doubleValue());
+        }
+        return doubleList;
+    }
+
     public void compare_children_by_region(){
         ArrayList<Integer> southern_children = new ArrayList<>();
         ArrayList<Integer> northern_children = new ArrayList<>();
