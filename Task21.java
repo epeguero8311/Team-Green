@@ -27,8 +27,8 @@ public class Task21 {
         double denominator = 0.0;
 
         for(int i = 0; i < children.size(); i++){
-            numerator += (children.get(i) - mean_y) * (charges.get(i) - mean_x);
-            denominator += Math.pow(children.get(i) - mean_y, 2);
+            numerator += (children.get(i) - mean_x) * (charges.get(i) - mean_y);
+            denominator += Math.pow(children.get(i) - mean_x, 2);
         }
 
         double slope = numerator / denominator;
