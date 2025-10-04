@@ -17,17 +17,17 @@ Arrange: I created a dataset of bmis
 Act: Calculate.getStatistics() method is used to calculate for needed outcomes
 Assert: Checking to make sure the stats match expected outcome 
 
-Feature:
+Feature: Vertical BMI Histogram
 Test 1
-Arrange:
-Act:
-Assert:
+Arrange: Make a dataset of insurance records that have bmi values for smokers and nonsmokers 
+Act: Program calls method to generate vertical text based histograms
+Assert: The console will display labeled vertical histograms that accurately represent the data
 -----------
-Feature:
+Feature: Smoker vs Nonsmoker Histogram 
 Test 2
-Arrange:
-Act:
-Assert:
+Arrange: Nake a dataset of insurance records that include smokers and nonsmokers
+Act: The program calls displaySmokerHistogram(nonSmokerCount, smokerCount) using the counts from countSmokers(records)
+Assert: The console will display labeled vertical histograms that accurately represent the data
 
 Feature:
 Test 1
