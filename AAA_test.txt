@@ -61,19 +61,19 @@ Act: Make a histogram showing the age distribution of smokers
 Assert: The console shows the correct age bins and labels
 
 Task 16
-Feature:
+Feature: Average Age of Smokers
 Test 1
-Arrange: Make a dataset
-Act:
-Assert:
+Arrange: Make a dataset with smoker status and age
+Act: Find average age of smokers and non-smokers
+Assert: The output shows if smokers are younger on average
 -----------
 Task 18
-Feature:
+Feature: Southern BMI Comparison
 Test 2
-Arrange: Make a dataset
-Act:
-Assert:
-
+Arrange: Make a dataset with region and BMI data
+Act: Compare average BMI in southern and northern regions
+Assert: The output shows if southerners have higher BMI, with both averages
+test
 Task 20
 Feature:
 Test 1
