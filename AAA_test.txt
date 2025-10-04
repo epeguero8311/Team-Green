@@ -5,6 +5,7 @@ Act: Perform action you want to test
 Assert: Check if results match expectations
 
 -chloe
+Task 2
 Feature:Calculate stats for age
 Test 1
 Arrange: I created a dataset of ages
@@ -17,37 +18,71 @@ Arrange: I created a dataset of bmis
 Act: Calculate.getStatistics() method is used to calculate for needed outcomes
 Assert: Checking to make sure the stats match expected outcome 
 
+Task 4
+Feature: Vertical BMI Histogram
+Test 1
+Arrange: Make a dataset of insurance records that have bmi values for smokers and nonsmokers 
+Act: Program calls method to generate vertical text based histograms
+Assert: The console will display labeled vertical histograms that accurately represent the data
+-----------
+Task 6
+Feature: Smoker vs Nonsmoker Histogram 
+Test 2
+Arrange: Nake a dataset of insurance records that include smokers and nonsmokers
+Act: The program calls displaySmokerHistogram(nonSmokerCount, smokerCount) using the counts from countSmokers(records)
+Assert: The console will display labeled vertical histograms that accurately represent the data
+
+Task 8
+Feature: Age Group Comparison 
+Test 1
+Arrange: Make a dataset of insurance records includes ages and charges for people both under 20 and over 50
+Act: The program runs a method to calculate the average charges of each group and compare them
+Assert: The console prints the average charges for both groups
+-----------
+Task 10
+Feature:Charges vs Number of Children
+Test 2
+Arrange: Make a dataset with number of children and total charges
+Act: Find the average charge per child for each family size
+Assert: The output shows if more children mean lower charge per child
+
+Task 12
+Feature: Southern Smoker Charges
+Test 1
+Arrange: Make a dataset with region, smoker status, and charges
+Act: Compare average charges of southern smokers to smokers in other regions
+Assert: The output shows if southern smokers pay at least 25% more
+-----------
+Task 14
+Feature: Age Distribution for Smokers
+Test 2
+Arrange:
+Act: Make a histogram showing the age distribution of smokers
+Assert: The console shows the correct age bins and labels
+
+Task 16
 Feature:
 Test 1
-Arrange:
+Arrange: Make a dataset
 Act:
 Assert:
 -----------
+Task 18
 Feature:
 Test 2
-Arrange:
+Arrange: Make a dataset
 Act:
 Assert:
 
+Task 20
 Feature:
 Test 1
-Arrange:
+Arrange: Make a dataset
 Act:
 Assert:
 -----------
-Feature:
-Test 2
-Arrange:
-Act:
-Assert:
-
-Feature:
-Test 1
-Arrange:
-Act:
-Assert:
------------
-Feature:
+Task 22
+Feature: Make a dataset
 Test 2
 Arrange:
 Act:
