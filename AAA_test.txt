@@ -1,9 +1,3 @@
-Feature: 
-Test 1
-Arrange: Setup code to test
-Act: Perform action you want to test
-Assert: Check if results match expectations
-
 ***Even AAA Tests***
 
 Task 2
@@ -28,7 +22,7 @@ Assert: The console will display labeled vertical histograms that accurately rep
 -----------
 Task 6
 Feature: Smoker vs Nonsmoker Histogram 
-Test 2
+Test 1
 Arrange: Nake a dataset of insurance records that include smokers and nonsmokers
 Act: The program calls displaySmokerHistogram(nonSmokerCount, smokerCount) using the counts from countSmokers(records)
 Assert: The console will display labeled vertical histograms that accurately represent the data
@@ -42,7 +36,7 @@ Assert: The console prints the average charges for both groups
 -----------
 Task 10
 Feature:Charges vs Number of Children
-Test 2
+Test 1
 Arrange: Make a dataset with number of children and total charges
 Act: Find the average charge per child for each family size
 Assert: The output shows if more children mean lower charge per child
@@ -56,7 +50,7 @@ Assert: The output shows if southern smokers pay at least 25% more
 -----------
 Task 14
 Feature: Age Distribution for Smokers
-Test 2
+Test 1
 Arrange:
 Act: Make a histogram showing the age distribution of smokers
 Assert: The console shows the correct age bins and labels
@@ -70,7 +64,7 @@ Assert: The output shows if smokers are younger on average
 -----------
 Task 18
 Feature: Southern BMI Comparison
-Test 2
+Test 1
 Arrange: Make a dataset with region and BMI data
 Act: Compare average BMI in southern and northern regions
 Assert: The output shows if southerners have higher BMI, with both averages
@@ -84,7 +78,7 @@ Assert: The output shows the correlation, formula, and all predicted charges.
 -----------
 Task 22
 Feature: Linear Regression of Charges vs Region
-Test 2
+Test 1
 Arrange: Make a dataset with region and charges.
 Act: Convert regions to numbers, find correlation and regression, then predict 33 new points.
 Assert: The output shows the correlation, equation, and all predicted charges clearly.
@@ -100,7 +94,7 @@ Act:
 Assert:
 ---------
 Feature:
-Test 2
+Test 1
 Arrange:
 Act: 
 Assert:
@@ -112,7 +106,7 @@ Act:
 Assert:
 ---------
 Feature:
-Test 2
+Test 1
 Arrange:
 Act: 
 Assert:
@@ -124,7 +118,7 @@ Act:
 Assert:
 ---------
 Feature:
-Test 2
+Test 1
 Arrange:
 Act: 
 Assert:
@@ -136,7 +130,7 @@ Act:
 Assert:
 ---------
 Feature:
-Test 2
+Test 1
 Arrange:
 Act: 
 Assert:
@@ -148,7 +142,7 @@ Act:
 Assert:
 ---------
 Feature:
-Test 2
+Test 1
 Arrange:
 Act: 
 Assert:
