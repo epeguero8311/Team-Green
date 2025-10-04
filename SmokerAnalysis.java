@@ -1,10 +1,7 @@
 import java.util.*;
 
 public class SmokerAnalysis {
-    public static void main(String[] args) {
-        StoreRecords store = new StoreRecords();
-        store.read_csv("insurance.csv");
-        
+    public static void analyze(StoreRecords store) {
         ArrayList<InsuranceRecord> allRecords = store.getRecords();
         
         ArrayList<Double> southSmokerCharges = new ArrayList<>();
