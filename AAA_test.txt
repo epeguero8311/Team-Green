@@ -54,35 +54,35 @@ Act: Compare average charges of southern smokers to smokers in other regions
 Assert: The output shows if southern smokers pay at least 25% more
 -----------
 Task 14
-Feature:
+Feature: Age Distribution for Smokers
 Test 2
 Arrange:
-Act:
-Assert:
+Act: Make a histogram showing the age distribution of smokers
+Assert: The console shows the correct age bins and labels
 
 Task 16
 Feature:
 Test 1
-Arrange:
+Arrange: Make a dataset
 Act:
 Assert:
 -----------
 Task 18
 Feature:
 Test 2
-Arrange:
+Arrange: Make a dataset
 Act:
 Assert:
 
 Task 20
 Feature:
 Test 1
-Arrange:
+Arrange: Make a dataset
 Act:
 Assert:
 -----------
 Task 22
-Feature:
+Feature: Make a dataset
 Test 2
 Arrange:
 Act:
