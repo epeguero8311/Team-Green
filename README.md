@@ -13,4 +13,5 @@ kharkle1, ttrotter, epeguero, cwhite29
 20. Calculate the simple linear regression of the charges versus BMI.  Output the Pearson Correlation Coefficient (r).  Apply your regression formula to 11 charges that are not in the Kaggle dataset and output both the x and y values.
 
 22. Calculate the simple linear regression of the charges versus the region.  Output the Pearson Correlation Coefficient (r).  Apply your regression formula to 33 charges that are not in the Kaggle dataset and output both the x and y values.
-		
+
+* Even AAA tests need to be completed 
