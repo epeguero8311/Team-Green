@@ -33,6 +33,11 @@ Test 1
 Arrange: Make a dataset of insurance records includes ages and charges for people both under 20 and over 50
 Act: The program runs a method to calculate the average charges of each group and compare them
 Assert: The console prints the average charges for both groups
+
+Test 2 
+Arrange: Make a dataset where seniors 50+ have charges that average 6000 and people 30 or younger that have charges that average 3000
+Act: The program calls the compareAgeGroupCharges(store) function on the dataset
+Assert: The console prints the counts and averages of both groups along with the ratio
 -----------
 Task 10
 Feature:Charges vs Number of Children
