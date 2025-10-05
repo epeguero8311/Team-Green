@@ -87,68 +87,79 @@ Assert: The output shows the correlation, equation, and all predicted charges cl
 
 ***Odd AAA Tests***
 
-Feature:
+Task 1
+Feature: Store the first N records of the dataset in a custom object
 Test 1
-Arrange:
-Act: 
-Assert:
+Arrange: I created a small dataset of InsuranceRecord objects and added them into StoreRecords. I set N = 3.
+Act: I called get_first_n_records(3) to retrieve the first 3 records.
+Assert: I checked that the returned list contains exactly 3 records and that they match the first 3 records from the dataset in the correct order.
 ---------
-Feature:
+Task 3
+Feature: Print histogram of ages from dataset
 Test 1
-Arrange:
-Act: 
-Assert:
+Arrange: A dataset of InsuranceRecord objects was created with repeated ages
+Act: An AgeHistogram object was created with this dataset and the print_histogram() method was called.
+Assert: The printed histogram displayed one line per unique age, in sorted order, with the correct number of * matching the count of each age.
 
-Feature:
+Task 5
+Feature: Print histogram of children counts from dataset
 Test 1
-Arrange:
-Act: 
-Assert:
+Arrange: A dataset of InsuranceRecord objects was created with varying numbers of children.
+Act: A ChildrenCount object was created with this dataset and the print_children_count() method was called.
+Assert: The printed output displayed one line per unique children count, in sorted order, with the correct number of * and the total in parentheses.
 ---------
-Feature:
+Task 7
+Feature: Check fairness of dataset by region distribution
 Test 1
-Arrange:
-Act: 
-Assert:
+Arrange: A dataset of InsuranceRecord objects was created with regions assigned.
+Act: A Task7 object was created with this dataset and the is_data_fair() and print_fairness() methods were called.
+Assert: The fairness result correctly indicated whether the dataset was balanced across regions within the allowed threshold.
 
-Feature:
+Task 9
+Feature: Check charge ranges across BMI groups
 Test 1
-Arrange:
-Act: 
-Assert:
+Arrange: A dataset of InsuranceRecord objects was created with varying BMI values and charges.
+Act: A Task9 object was created with this dataset and the check_bmi_ranges() method was called.
+Assert: The output correctly displayed the charge ranges for each BMI group and identified whether the 30–45 BMI group had the largest range.
 ---------
-Feature:
+Task 11
+Feature: Check hypothesis that smokers have higher charges than non-smokers
 Test 1
-Arrange:
-Act: 
-Assert:
+Arrange: A dataset of InsuranceRecord objects was created containing both smokers and non-smokers with associated charges.
+Act: A Task11 object was created with this dataset and the check_smoker_hypothesis() method was called.
+Assert: The output correctly displayed the average and range of charges for both groups and determined whether the hypothesis was supported.
 
-Feature:
+Task 13
+Feature: Check hypothesis that smokers have a lower average BMI than non-smokers
 Test 1
-Arrange:
-Act: 
-Assert:
+Arrange: A dataset of InsuranceRecord objects was created containing both smokers and non-smokers with BMI values.
+Act: A Task13 object was created with this dataset and the check_smoker_bmi() method was called.
+Assert: The output correctly displayed the average BMI for both groups and determined whether the hypothesis was supported
 ---------
-Feature:
+Task 15
+Feature: Sort regions by average insurance charges
 Test 1
-Arrange:
-Act: 
-Assert:
+Arrange: A dataset of InsuranceRecord objects was created with associated regions and charges.
+Act: A Task15 object was created with this dataset and the sort_regions_by_avg_charges() method was called.
+Assert: The output correctly displayed the regions sorted from highest to lowest average charges.
 
-Feature:
+Task 17
+Feature: Compare average age of smokers between southern and northern regions
 Test 1
-Arrange:
-Act: 
-Assert:
+Arrange: A dataset of InsuranceRecord objects was created with region and smoker information.
+Act:  A Task17 object was created with this dataset and the compare_smoking_by_region() method was called.
+Assert: The output correctly displayed the average age for southern and northern smokers and indicated which group was older or if they were the same.
 ---------
-Feature:
+Task 19
+Feature: Compare average number of children and average age between southern and northern regions
 Test 1
-Arrange:
-Act: 
-Assert:
+Arrange: A dataset of InsuranceRecord objects was created with region, age, and children information.
+Act: A Task19 object was created with this dataset and the compare_children_by_region() method was called.
+Assert: The output correctly displayed the average number of children and average age for both southern and northern regions.
 
-Feature:
+Task 21 
+Feature: Predict insurance charges based on number of children using linear regression
 Test 1
-Arrange:
-Act: 
-Assert:
+Arrange: A dataset was loaded from the CSV file containing the number of children and corresponding charges.
+Act: The slope, intercept, and Pearson correlation coefficient were calculated, and charges were predicted for a range of child counts.
+Assert:The output correctly displayed the Pearson correlation coefficient and the predicted charges for each child count.
