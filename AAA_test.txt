@@ -123,18 +123,18 @@ Act: A Task9 object was created with this dataset and the check_bmi_ranges() met
 Assert: The output correctly displayed the charge ranges for each BMI group and identified whether the 30–45 BMI group had the largest range.
 ---------
 Task 11
-Feature:
-Test 1
-Arrange:
-Act: 
-Assert:
-
-Task 13
 Feature: Check hypothesis that smokers have higher charges than non-smokers
 Test 1
 Arrange: A dataset of InsuranceRecord objects was created containing both smokers and non-smokers with associated charges.
 Act: A Task11 object was created with this dataset and the check_smoker_hypothesis() method was called.
 Assert: The output correctly displayed the average and range of charges for both groups and determined whether the hypothesis was supported.
+
+Task 13
+Feature:
+Test 1
+Arrange:
+Act: 
+Assert:
 ---------
 Feature:
 Test 1
