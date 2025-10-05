@@ -108,29 +108,33 @@ Arrange: A dataset of InsuranceRecord objects was created with varying numbers o
 Act: A ChildrenCount object was created with this dataset and the print_children_count() method was called.
 Assert: The printed output displayed one line per unique children count, in sorted order, with the correct number of * and the total in parentheses.
 ---------
-Feature:
+Task 7
+Feature: Check fairness of dataset by region distribution
 Test 1
-Arrange:
-Act: 
-Assert:
+Arrange: A dataset of InsuranceRecord objects was created with regions assigned.
+Act: A Task7 object was created with this dataset and the is_data_fair() and print_fairness() methods were called.
+Assert: The fairness result correctly indicated whether the dataset was balanced across regions within the allowed threshold.
 
-Feature:
+Task 9
+Feature: Check charge ranges across BMI groups
 Test 1
-Arrange:
-Act: 
-Assert:
+Arrange: A dataset of InsuranceRecord objects was created with varying BMI values and charges.
+Act: A Task9 object was created with this dataset and the check_bmi_ranges() method was called.
+Assert: The output correctly displayed the charge ranges for each BMI group and identified whether the 30–45 BMI group had the largest range.
 ---------
+Task 11
 Feature:
 Test 1
 Arrange:
 Act: 
 Assert:
 
-Feature:
+Task 13
+Feature: Check hypothesis that smokers have higher charges than non-smokers
 Test 1
-Arrange:
-Act: 
-Assert:
+Arrange: A dataset of InsuranceRecord objects was created containing both smokers and non-smokers with associated charges.
+Act: A Task11 object was created with this dataset and the check_smoker_hypothesis() method was called.
+Assert: The output correctly displayed the average and range of charges for both groups and determined whether the hypothesis was supported.
 ---------
 Feature:
 Test 1
