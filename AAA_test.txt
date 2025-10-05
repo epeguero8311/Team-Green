@@ -87,23 +87,26 @@ Assert: The output shows the correlation, equation, and all predicted charges cl
 
 ***Odd AAA Tests***
 
-Feature:
+Task 1
+Feature: Store the first N records of the dataset in a custom object
 Test 1
-Arrange:
-Act: 
-Assert:
+Arrange: I created a small dataset of InsuranceRecord objects and added them into StoreRecords. I set N = 3.
+Act: I called get_first_n_records(3) to retrieve the first 3 records.
+Assert: I checked that the returned list contains exactly 3 records and that they match the first 3 records from the dataset in the correct order.
 ---------
-Feature:
+Task 3
+Feature: Print histogram of ages from dataset
 Test 1
-Arrange:
-Act: 
-Assert:
+Arrange: A dataset of InsuranceRecord objects was created with repeated ages
+Act: An AgeHistogram object was created with this dataset and the print_histogram() method was called.
+Assert: The printed histogram displayed one line per unique age, in sorted order, with the correct number of * matching the count of each age.
 
-Feature:
+Task 5
+Feature: Print histogram of children counts from dataset
 Test 1
-Arrange:
-Act: 
-Assert:
+Arrange: A dataset of InsuranceRecord objects was created with varying numbers of children.
+Act: A ChildrenCount object was created with this dataset and the print_children_count() method was called.
+Assert: The printed output displayed one line per unique children count, in sorted order, with the correct number of * and the total in parentheses.
 ---------
 Feature:
 Test 1
