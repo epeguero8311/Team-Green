@@ -151,14 +151,15 @@ Act:  A Task17 object was created with this dataset and the compare_smoking_by_r
 Assert: The output correctly displayed the average age for southern and northern smokers and indicated which group was older or if they were the same.
 ---------
 Task 19
-Feature:
+Feature: Compare average number of children and average age between southern and northern regions
 Test 1
-Arrange:
-Act: 
-Assert:
+Arrange: A dataset of InsuranceRecord objects was created with region, age, and children information.
+Act: A Task19 object was created with this dataset and the compare_children_by_region() method was called.
+Assert: The output correctly displayed the average number of children and average age for both southern and northern regions.
 
-Feature:
+Task 21 
+Feature: Predict insurance charges based on number of children using linear regression
 Test 1
-Arrange:
-Act: 
-Assert:
+Arrange: A dataset was loaded from the CSV file containing the number of children and corresponding charges.
+Act: The slope, intercept, and Pearson correlation coefficient were calculated, and charges were predicted for a range of child counts.
+Assert:The output correctly displayed the Pearson correlation coefficient and the predicted charges for each child count.
