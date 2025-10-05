@@ -156,6 +156,12 @@ Test 1
 Arrange: A dataset of InsuranceRecord objects was created containing both smokers and non-smokers with BMI values.
 Act: A Task13 object was created with this dataset and the check_smoker_bmi() method was called.
 Assert: The output correctly displayed the average BMI for both groups and determined whether the hypothesis was supported
+
+Test 2
+Arrange:A dataset of InsuranceRecord objects was created where smokers have higher BMI values than no smokers, which goes against the hypothesis.
+Act:A Task13 object was created with this dateset and the check_smoker_bmi() method was called.
+Assert:The program prints"No: Smokers do not have an average lower BMI than non-smokers"
+
 ---------
 Task 15
 Feature: Sort regions by average insurance charges
@@ -163,6 +169,11 @@ Test 1
 Arrange: A dataset of InsuranceRecord objects was created with associated regions and charges.
 Act: A Task15 object was created with this dataset and the sort_regions_by_avg_charges() method was called.
 Assert: The output correctly displayed the regions sorted from highest to lowest average charges.
+
+Test 2
+Arrange:A dataset of InsuranceRecord objects was created where the southern region had higher charges.
+Act:A Task15 object was created with this dataset and the sort_regions_by_avg_charges() method was called.
+Assert:The program prints "Regions sorted by avereage charegs shows South, Northeast, Northwest, confirming the regions.
 
 Task 17
 Feature: Compare average age of smokers between southern and northern regions
