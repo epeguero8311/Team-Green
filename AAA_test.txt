@@ -120,12 +120,23 @@ Arrange: A dataset of InsuranceRecord objects was created with regions assigned.
 Act: A Task7 object was created with this dataset and the is_data_fair() and print_fairness() methods were called.
 Assert: The fairness result correctly indicated whether the dataset was balanced across regions within the allowed threshold.
 
+
+Test 2
+Arrange:A dataset of InsuranceRecord objects was created with unbalanced region assignments
+Act:A Task7 object was created with this dataset and the print_fairness() method was called
+Assert: The program printed "This data is not fair"
+
 Task 9
 Feature: Check charge ranges across BMI groups
 Test 1
 Arrange: A dataset of InsuranceRecord objects was created with varying BMI values and charges.
 Act: A Task9 object was created with this dataset and the check_bmi_ranges() method was called.
 Assert: The output correctly displayed the charge ranges for each BMI group and identified whether the 30–45 BMI group had the largest range.
+
+Test 2 
+Arrange:A dataset of InsuranceRecord objects was created wuth charges sharply increasing in the 30<45 bmi range.
+Act:A Task9 object was created with this dataset and the check_bmi_ranges() method was called
+Assert:The program prints "The range of charges in BMI 30-45 is greater than the other 2 ranges
 ---------
 Task 11
 Feature: Check hypothesis that smokers have higher charges than non-smokers
