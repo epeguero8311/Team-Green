@@ -20,8 +20,8 @@ public class Task21 {
             return;
         }
 
-        double mean_y = mean(children);
-        double mean_x = mean(charges);
+        double mean_x = mean(children);
+        double mean_y = mean(charges);
 
         double numerator = 0.0;
         double denominator = 0.0;
@@ -34,7 +34,7 @@ public class Task21 {
         double slope = numerator / denominator;
         double intercept = mean_y - slope * mean_x;
 
-        double r = pearson(children, charges);
+        double r = person(children, charges);
         System.out.println("Pearson correlation coefficient: " + r);
 
         System.out.println("\nPredicted charges for new child counts:");
@@ -53,7 +53,7 @@ public class Task21 {
         return sum / values.size();
     }
 
-    public static double pearson(ArrayList<Double> x, ArrayList<Double> y) {
+    public static double person(ArrayList<Double> x, ArrayList<Double> y) {
         double meanx = mean(x);
         double meany = mean(y);
 
