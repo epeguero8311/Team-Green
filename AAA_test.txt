@@ -33,6 +33,11 @@ Test 1
 Arrange: Make a dataset of insurance records includes ages and charges for people both under 20 and over 50
 Act: The program runs a method to calculate the average charges of each group and compare them
 Assert: The console prints the average charges for both groups
+
+Test 2 
+Arrange: Make a dataset where seniors 50+ have charges that average 6000 and people 30 or younger that have charges that average 3000
+Act: The program calls the compareAgeGroupCharges(store) function on the dataset
+Assert: The console prints the counts and averages of both groups along with the ratio
 -----------
 Task 10
 Feature:Charges vs Number of Children
@@ -115,12 +120,23 @@ Arrange: A dataset of InsuranceRecord objects was created with regions assigned.
 Act: A Task7 object was created with this dataset and the is_data_fair() and print_fairness() methods were called.
 Assert: The fairness result correctly indicated whether the dataset was balanced across regions within the allowed threshold.
 
+
+Test 2
+Arrange:A dataset of InsuranceRecord objects was created with unbalanced region assignments
+Act:A Task7 object was created with this dataset and the print_fairness() method was called
+Assert: The program printed "This data is not fair"
+
 Task 9
 Feature: Check charge ranges across BMI groups
 Test 1
 Arrange: A dataset of InsuranceRecord objects was created with varying BMI values and charges.
 Act: A Task9 object was created with this dataset and the check_bmi_ranges() method was called.
 Assert: The output correctly displayed the charge ranges for each BMI group and identified whether the 30–45 BMI group had the largest range.
+
+Test 2 
+Arrange:A dataset of InsuranceRecord objects was created wuth charges sharply increasing in the 30<45 bmi range
+Act:A Task9 object was created with this dataset and the check_bmi_ranges() method was called
+Assert:The program prints "The range of charges in BMI 30-45 is greater than the other 2 ranges
 ---------
 Task 11
 Feature: Check hypothesis that smokers have higher charges than non-smokers
@@ -129,12 +145,23 @@ Arrange: A dataset of InsuranceRecord objects was created containing both smoker
 Act: A Task11 object was created with this dataset and the check_smoker_hypothesis() method was called.
 Assert: The output correctly displayed the average and range of charges for both groups and determined whether the hypothesis was supported.
 
+Test 2
+Arrange:A dataset of InsuranceRecord objects was created where non-smokers have consistently higher charges than smokers
+Act:A Task11 object was created with this dataset and the check_smoker_hypothesis() method was called.
+Assert:The program prints "The hypothesis is not supported"
+
 Task 13
 Feature: Check hypothesis that smokers have a lower average BMI than non-smokers
 Test 1
 Arrange: A dataset of InsuranceRecord objects was created containing both smokers and non-smokers with BMI values.
 Act: A Task13 object was created with this dataset and the check_smoker_bmi() method was called.
 Assert: The output correctly displayed the average BMI for both groups and determined whether the hypothesis was supported
+
+Test 2
+Arrange:A dataset of InsuranceRecord objects was created where smokers have higher BMI values than no smokers, which goes against the hypothesis.
+Act:A Task13 object was created with this dateset and the check_smoker_bmi() method was called.
+Assert:The program prints"No: Smokers do not have an average lower BMI than non-smokers"
+
 ---------
 Task 15
 Feature: Sort regions by average insurance charges
@@ -142,6 +169,11 @@ Test 1
 Arrange: A dataset of InsuranceRecord objects was created with associated regions and charges.
 Act: A Task15 object was created with this dataset and the sort_regions_by_avg_charges() method was called.
 Assert: The output correctly displayed the regions sorted from highest to lowest average charges.
+
+Test 2
+Arrange:A dataset of InsuranceRecord objects was created where the southern region had higher charges.
+Act:A Task15 object was created with this dataset and the sort_regions_by_avg_charges() method was called.
+Assert:The program prints "Regions sorted by avereage charegs shows South, Northeast, Northwest, confirming the regions.
 
 Task 17
 Feature: Compare average age of smokers between southern and northern regions
