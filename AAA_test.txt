@@ -145,6 +145,11 @@ Arrange: A dataset of InsuranceRecord objects was created containing both smoker
 Act: A Task11 object was created with this dataset and the check_smoker_hypothesis() method was called.
 Assert: The output correctly displayed the average and range of charges for both groups and determined whether the hypothesis was supported.
 
+Test 2
+Arrange:A dataset of InsuranceRecord objects was created where non-smokers have consistently higher charges than smokers
+Act:A Task11 object was created with this dataset and the check_smoker_hypothesis() method was called.
+Assert:The program prints "The hypothesis is not supported"
+
 Task 13
 Feature: Check hypothesis that smokers have a lower average BMI than non-smokers
 Test 1
